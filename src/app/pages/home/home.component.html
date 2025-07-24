@@ -1,0 +1,85 @@
+<!-- Hero Section -->
+<section class="hero" *ngIf="content?.hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>{{ content.hero.title }}</h1>
+      <p class="hero-subtitle">{{ content.hero.subtitle }}</p>
+      <div class="hero-buttons" *ngIf="content.hero.ctaButtons?.length">
+        <button *ngFor="let btn of content.hero.ctaButtons" 
+                [ngClass]="{
+                  'btn-primary': btn.type === 'primary',
+                  'btn-outline': btn.type === 'secondary'
+                }">
+          {{ btn.text }}
+        </button>
+      </div>
+    </div>
+    <img *ngIf="content.hero.bannerImg" [src]="content.hero.bannerImg" alt="Banner" class="hero-img" />
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" *ngIf="content?.about">
+  <h2>{{ content.about.heading }}</h2>
+  <p>{{ content.about.description }}</p>
+</section>
+
+<!-- Practice Section -->
+<section class="practice" *ngIf="content?.practice">
+  <h2>{{ content.practice.title }}</h2>
+  <div class="practice-list">
+    <div class="practice-item" *ngFor="let item of content.practice.items">
+      <img *ngIf="item.icon" [src]="item.icon" alt="icon" class="practice-icon" />
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" *ngIf="content?.testimonials">
+  <h2>{{ content.testimonials.title }} <span class="red-heart">&#10084;</span></h2>
+  <div class="testimonials-list">
+    <div class="testimonial-card" *ngFor="let t of content.testimonials.items">
+      <div class="avatar" *ngIf="t.avatar">
+        <img [src]="t.avatar" alt="{{t.name}} avatar" />
+      </div>
+      <blockquote>{{ t.feedback }}</blockquote>
+      <cite>
+        {{ t.name }}
+        <span class="testimonial-date" *ngIf="t.date">{{ t.date }}</span>
+      </cite>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats" *ngIf="content?.stats">
+  <div class="stats-list">
+    <div class="stat-card" *ngFor="let stat of content.stats">
+      <span class="stat-value">{{ stat.value }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" *ngIf="content?.footer">
+  <div class="footer-columns">
+    <div class="footer-group" *ngIf="content.footer.company?.length">
+      <h4>Company</h4>
+      <ul>
+        <li *ngFor="let item of content.footer.company">{{ item }}</li>
+      </ul>
+    </div>
+    <div class="footer-group" *ngIf="content.footer.legal?.length">
+      <h4>Legal</h4>
+      <ul>
+        <li *ngFor="let item of content.footer.legal">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    {{ content.footer.copyright }}
+  </div>
+</footer>
