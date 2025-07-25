@@ -1,10 +1,21 @@
 {
+  "navbar": {
+    "logo": "assets/logo_eduassess.png",
+    "links": [
+      { "text": "Home", "route": "/" },
+      { "text": "About", "route": "/#about" },
+      { "text": "Results", "route": "/#practice" },
+      { "text": "Exams", "route": "/exams" },
+      { "text": "Contact", "route": "/#contact" }
+    ],
+    "ctaButton": { "text": "Login / Register", "route": "/auth" }
+  },
   "hero": {
     "title": "EduAssess",
-    "subtitle": "Mock Smart, Learn Smart",
+    "subtitle": "Assess Smarter , Learn Bette",
     "ctaButtons": [
-      { "text": "EXAMS", "type": "primary" },
-      { "text": "ANNOUNCEMENTS", "type": "secondary" }
+      { "text": "EXAMS", "type": "primary", "route": "/exams" },
+      { "text": "ANNOUNCEMENTS", "type": "secondary", "route": "/announcements" }
     ],
     "bannerImg": "assets/student-at-desk.png"
   },
@@ -59,4 +70,5 @@
     "legal": ["Privacy Policy", "T&C"],
     "copyright": "© Copyright EduAssess, 2025"
   }
+
 }

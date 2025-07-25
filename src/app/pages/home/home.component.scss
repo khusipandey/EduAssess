@@ -5,67 +5,170 @@
   background-color: #f9f9f9;
   padding: 2rem;
 }
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-/* Section: Hero */
-.hero {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: #fff;
-  text-align: center;
-  padding: 4rem 2rem;
-  border-radius: 16px;
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  .navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-  .hero-left {
-    flex: 1;
-    text-align: left;
-    min-width: 250px;
+  .navbar-logo img {
+    height: 40px;
+    cursor: pointer;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 
-    .hero-subtitle {
-      font-size: 1.5rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
+    li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      transition: color 0.3s ease;
 
-    .hero-buttons {
-      button {
-        margin-right: 1rem;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-      }
-
-      .btn-primary {
-        background-color: #fff;
-        color: #2575fc;
-        font-weight: bold;
-      }
-
-      .btn-outline {
-        background-color: transparent;
-        border: 2px solid #fff;
-        color: #fff;
+      &:hover {
+        color: #2575fc; // highlight color
       }
     }
   }
 
-  .hero-img {
-    flex: 1;
-    max-width: 400px;
+  .navbar-cta {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    background: #FFA629;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #f16e09;
+    }
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-inner {
+    flex-wrap: wrap;
+  }
+  
+  .navbar-links {
     width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+    gap: 1rem;
+  }
+}
+
+/* Section: Hero */
+:host {
+  display: block;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #667eea, #764ba2); // ← Your original gradient restored
+  color: #ffffff;
+  border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  flex: 1;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.primary {
+        background-color: #fff;
+        color: #4a4a4a;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+
+      &.secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 2rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
     margin-top: 2rem;
   }
 }
+
 
 /* Section: About */
 .about {
@@ -229,7 +332,7 @@
 
 /* Footer */
 .footer {
-  background: #4b0082;
+  background: #660da6;
   color: #fff;
   padding: 3rem 2rem;
   border-radius: 12px;

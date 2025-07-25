@@ -13,7 +13,10 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "es2020",                // ✅ Angular CLI default
+    "moduleResolution": "node",                    // ✅ Added
+    "esModuleInterop": true,                // ✅ Added
+    "resolveJsonModule": true               // ✅ Added
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

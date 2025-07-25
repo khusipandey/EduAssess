@@ -1,0 +1,122 @@
+/* Sticky footer layout with background */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f3ecff; // Soft lavender background
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #a07fed;
+  color: #fff;
+
+  .links a {
+    margin-left: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  img {
+    height: 40px;
+    cursor: pointer;
+  }
+}
+}
+
+/* Exams Section */
+.exams-section {
+  text-align: center;
+  padding: 2rem;
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4a0072;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+    .exam-card {
+      width: 280px;
+      height: 400px;
+      padding: 1rem;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      color: #000000;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover {
+        transform: translateY(-8px);
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+        color: #5b007c;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #333;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #660da6;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .exam-card {
+    width: 90% !important;
+  }
+}

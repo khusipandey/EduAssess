@@ -1,75 +1,25 @@
 import { Component } from '@angular/core';
 import { NgIf, NgFor, NgClass } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import contentData from '../../../assets/home.content.json';
 
 @Component({
   selector: 'app-home',
   standalone: true,
+  imports: [NgIf, NgFor, NgClass, RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [NgIf, NgFor, NgClass]
 })
 export class HomeComponent {
-  content = {
-    hero: {
-      title: 'EduAssess',
-      subtitle: 'Mock Smart, Learn Smart',
-      ctaButtons: [
-        { text: 'EXAMS', type: 'primary' },
-        { text: 'ANNOUNCEMENTS', type: 'secondary' }
-      ],
-      bannerImg: 'assets/student-at-desk.png'
-    },
-    about: {
-      heading: 'Manage and Take Exams Seamlessly with EduAssess',
-      description:
-        'EduAssess is a powerful, intelligent online exam and assessment portal built to revolutionize the way educational institutions manage and conduct examinations. Designed with both educators and students in mind, EduAssess delivers a seamless digital experience—from creating exams to publishing results, detailed analytics, and more. Students benefit from a smooth, secure, and insightful experience, while institutions gain better control, transparency, and accuracy. With support for various question formats, real-time performance analytics, and student feedback integration, EduAssess brings confidence to every test-taker\'s journey.'
-    },
-    practice: {
-      title: 'Why take Practice test series?',
-      items: [
-        {
-          title: 'Answer questions',
-          description: 'Answer questions based on latest exam patterns for upcoming exams.',
-          icon: 'assets/icon-1.svg'
-        },
-        {
-          title: 'Exclusive Next Level Support',
-          description: 'Attempt exclusive test series designed by experts from IIT, NEET, Super30 Alumni.',
-          icon: 'assets/icon-2.svg'
-        },
-        {
-          title: 'In-depth Performance',
-          description: 'Get in-depth Performance Analysis of your Strengths & Weaknesses.',
-          icon: 'assets/icon-3.svg'
-        },
-        {
-          title: 'Detailed Solutions',
-          description: 'Get detailed solutions of every question by expert faculty, IIT, NEET & Super30 Alumni.',
-          icon: 'assets/icon-4.svg'
-        }
-      ]
-    },
-    testimonials: {
-      title: 'Hear it directly from our students',
-      items: [
-        {
-          name: 'Saurabh Kr. Dey',
-          date: '12.03.2025',
-          feedback: 'EduAssess changed the way I prepare for exams. The analytics are simply superb!',
-          avatar: 'assets/saurabh-avatar.jpg'
-        }
-      ]
-    },
-    stats: [
-      { value: '4 K+', label: 'Trusted by Students' },
-      { value: '1.8 M+', label: 'Questions Attempted' },
-      { value: '0.4 M+', label: 'Test Attempted' },
-      { value: '3 K+', label: 'Live Sessions' }
-    ],
-    footer: {
-      company: ['About Us', 'Career', 'Contact Us', 'FAQs'],
-      legal: ['Privacy Policy', 'T&C'],
-      copyright: '© Copyright EduAssess, 2025'
+  content = contentData;
+
+  constructor(private router: Router) {}
+
+  navigateFromHero(action: string) {
+    if (action.toUpperCase() === 'EXAMS') {
+      this.router.navigate(['/exams']);
+    } else if (action.toUpperCase() === 'ANNOUNCEMENTS') {
+      this.router.navigate(['/announcements']);
     }
-  };
+  }
 }

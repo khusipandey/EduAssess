@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "logo": "assets/logo_eduassess.png",
+    "links": [
+      { "label": "Home", "route": "/" },
+      { "label": "Results", "route": "/#result" }
+    ]
+  },
+  "examsSection": {
+    "title": "Choose Your Action",
+    "cards": [
+      {
+        "title": "Create Exam",
+        "description": "Design and schedule new exams effortlessly. Define subjects, set durations, and assign exam dates—all in one place.",
+        "route": "/create-exam",
+        "image": "assets/create-exam.png"
+      },
+      {
+        "title": "Appear for Exam",
+        "description": "Join upcoming exams with a single click. View exam details, instructions, and start your test seamlessly.",
+        "route": "/appear-exam",
+        "image": "assets/exam-appear.png"
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2025 Eduassess. All rights reserved."
+  }
+}

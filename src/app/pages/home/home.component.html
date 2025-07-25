@@ -1,20 +1,40 @@
+<!-- Navbar -->
+<nav class="navbar" *ngIf="content?.navbar">
+  <div class="navbar-inner">
+    <a routerLink="/" class="navbar-logo">
+      <img [src]="content.navbar.logo" alt="EduAssess Logo" />
+    </a>
+
+    <ul class="navbar-links">
+      <li *ngFor="let link of content.navbar.links">
+        <a [routerLink]="link.route">{{ link.text }}</a>
+      </li>
+    </ul>
+
+    <a class="btn btn-primary navbar-cta" [routerLink]="content.navbar.ctaButton.route">
+      {{ content.navbar.ctaButton.text }}
+    </a>
+  </div>
+</nav>
+
+
 <!-- Hero Section -->
-<section class="hero" *ngIf="content?.hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <h1>{{ content.hero.title }}</h1>
-      <p class="hero-subtitle">{{ content.hero.subtitle }}</p>
-      <div class="hero-buttons" *ngIf="content.hero.ctaButtons?.length">
-        <button *ngFor="let btn of content.hero.ctaButtons" 
-                [ngClass]="{
-                  'btn-primary': btn.type === 'primary',
-                  'btn-outline': btn.type === 'secondary'
-                }">
-          {{ btn.text }}
-        </button>
-      </div>
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>{{ content.hero.title }}</h1>
+    <p>{{ content.hero.subtitle }}</p>
+    <div class="buttons">
+      <button
+        *ngFor="let btn of content.hero.ctaButtons"
+        [ngClass]="btn.type"
+        (click)="navigateFromHero(btn.text)"
+      >
+        {{ btn.text }}
+      </button>
     </div>
-    <img *ngIf="content.hero.bannerImg" [src]="content.hero.bannerImg" alt="Banner" class="hero-img" />
+  </div>
+  <div class="hero-image">
+    <img [src]="content.hero.bannerImg" alt="Student at desk" />
   </div>
 </section>
 
@@ -24,31 +44,16 @@
   <p>{{ content.about.description }}</p>
 </section>
 
-<!-- Practice Section -->
-<section class="practice" *ngIf="content?.practice">
-  <h2>{{ content.practice.title }}</h2>
-  <div class="practice-list">
-    <div class="practice-item" *ngFor="let item of content.practice.items">
-      <img *ngIf="item.icon" [src]="item.icon" alt="icon" class="practice-icon" />
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
-    </div>
-  </div>
-</section>
-
 <!-- Testimonials Section -->
 <section class="testimonials" *ngIf="content?.testimonials">
-  <h2>{{ content.testimonials.title }} <span class="red-heart">&#10084;</span></h2>
+  <h2>{{ content.testimonials.title }}</h2>
   <div class="testimonials-list">
     <div class="testimonial-card" *ngFor="let t of content.testimonials.items">
       <div class="avatar" *ngIf="t.avatar">
-        <img [src]="t.avatar" alt="{{t.name}} avatar" />
+        <img [src]="t.avatar" alt="{{ t.name }} avatar" />
       </div>
       <blockquote>{{ t.feedback }}</blockquote>
-      <cite>
-        {{ t.name }}
-        <span class="testimonial-date" *ngIf="t.date">{{ t.date }}</span>
-      </cite>
+      <cite>{{ t.name }} <span *ngIf="t.date"> - {{ t.date }}</span></cite>
     </div>
   </div>
 </section>
@@ -64,22 +69,23 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer" *ngIf="content?.footer">
-  <div class="footer-columns">
-    <div class="footer-group" *ngIf="content.footer.company?.length">
+<footer *ngIf="content?.footer" class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
       <h4>Company</h4>
       <ul>
         <li *ngFor="let item of content.footer.company">{{ item }}</li>
       </ul>
     </div>
-    <div class="footer-group" *ngIf="content.footer.legal?.length">
+
+    <div class="footer-section">
       <h4>Legal</h4>
       <ul>
         <li *ngFor="let item of content.footer.legal">{{ item }}</li>
       </ul>
     </div>
   </div>
-  <div class="footer-copyright">
-    {{ content.footer.copyright }}
+  <div class="footer-bottom">
+    <p>{{ content.footer.copyright }}</p>
   </div>
 </footer>

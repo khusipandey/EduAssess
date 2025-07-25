@@ -1,0 +1,35 @@
+<!-- Wrapper for sticky footer -->
+<div class="page-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="brand">
+    <img *ngIf="content.navbar.logo" [src]="content.navbar.logo" alt="EduAssess Logo" />
+  </div>
+  <div class="links">
+    <a *ngFor="let link of content.navbar.links" [routerLink]="link.route">{{ link.label }}</a>
+  </div>
+</nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <section class="exams-section">
+      <h2 class="title">{{ content.examsSection.title }}</h2>
+      <div class="card-container">
+        <a
+          *ngFor="let card of content.examsSection.cards"
+          [routerLink]="card.route"
+          class="exam-card"
+        >
+          <img [src]="card.image" alt="{{ card.title }}" />
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    {{ content.footer.text }}
+  </footer>
+</div>
