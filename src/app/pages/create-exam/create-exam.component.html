@@ -1,0 +1,48 @@
+<!-- Navbar -->
+<div class="navbar">
+  <div class="brand">
+    <img src="assets/logo_eduassess.png" alt="EduAssess Logo" />
+  </div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/results">Results</a>
+  </div>
+</div>
+
+<!-- Create Exam Form -->
+<section class="create-exam-container">
+  <h2>{{ createExamContent.title }}</h2>
+
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-group" *ngFor="let field of createExamContent.fields">
+      <label [for]="field.name">{{ field.label }}</label>
+      <input
+        [type]="field.type"
+        [id]="field.name"
+        [name]="field.name"
+        [(ngModel)]="examData[field.name]"
+        [placeholder]="field.placeholder"
+        [required]="field.required"
+        [attr.pattern]="field.validators?.pattern"
+        [min]="field.validators?.min"
+        #ctrl="ngModel"
+      />
+
+      <!-- Error Message Display -->
+      <div class="error" *ngIf="ctrl.invalid && (ctrl.dirty || ctrl.touched)">
+        <span *ngIf="ctrl.errors?.['required']">{{ field.label }} is required.</span>
+        <span *ngIf="ctrl.errors?.['pattern']">{{ field.validators?.patternMsg }}</span>
+        <span *ngIf="ctrl.errors?.['min']">{{ field.validators?.minMsg }}</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      {{ createExamContent.submitButtonText }}
+    </button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 EduAssess. All rights reserved.</p>
+</footer>

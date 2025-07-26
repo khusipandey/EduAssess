@@ -1,0 +1,77 @@
+{
+  "createExamSection": {
+    "title": "Create Exam",
+    "fields": [
+      {
+        "label": "Exam ID",
+        "type": "text",
+        "name": "examId",
+        "placeholder": "Enter Exam ID",
+        "required": true,
+        "validators": {
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "patternMsg": "Only letters, numbers, underscores, and hyphens are allowed."
+        }
+      },
+      {
+        "label": "Subject",
+        "type": "text",
+        "name": "subject",
+        "placeholder": "Enter Subject",
+        "required": true,
+        "validators": {
+          "pattern": "^[A-Za-z ]+$",
+          "patternMsg": "Only letters and spaces are allowed."
+        }
+      },
+      {
+        "label": "Duration (in minutes)",
+        "type": "number",
+        "name": "duration",
+        "placeholder": "Enter Duration",
+        "required": true,
+        "validators": {
+          "min": 1,
+          "minMsg": "Duration must be at least 1 minute."
+        }
+      },
+      {
+        "label": "Exam Date",
+        "type": "date",
+        "name": "date",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "label": "Total Marks",
+        "type": "number",
+        "name": "totalMarks",
+        "placeholder": "Enter Total Marks",
+        "required": false,
+        "validators": {
+          "min": 1,
+          "minMsg": "Total Marks must be greater than 0."
+        }
+      },
+      {
+        "label": "Passing Marks",
+        "type": "number",
+        "name": "passingMarks",
+        "placeholder": "Enter Passing Marks",
+        "required": false,
+        "validators": {
+          "min": 0,
+          "minMsg": "Passing Marks cannot be negative."
+        }
+      },
+      {
+        "label": "Instructions",
+        "type": "text",
+        "name": "instructions",
+        "placeholder": "Enter Instructions",
+        "required": false
+      }
+    ],
+    "submitButtonText": "Create Exam"
+  }
+}

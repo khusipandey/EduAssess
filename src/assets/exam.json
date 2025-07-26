@@ -1,0 +1,36 @@
+{
+  "exams": [
+    {
+      "examId": "EX001",
+      "subject": "Mathematics",
+      "duration": "60 mins",
+      "date": "",
+      "status": "Upcoming",
+      "action": "Start"
+    },
+    {
+      "examId": "EX002",
+      "subject": "Physics",
+      "duration": "45 mins",
+      "date": "",
+      "status": "Completed",
+      "action": "view result"
+    },
+    {
+      "examId": "EX003",
+      "subject": "Chemistry",
+      "duration": "30 mins",
+      "date": "",
+      "status": "Upcoming",
+      "action": "Start"
+    },
+    {
+      "examId": "EX004",
+      "subject": "Computer sc",
+      "duration": "60 mins",
+      "date": "",
+      "status": "Completed",
+      "action": "view result"
+    }
+  ]
+}

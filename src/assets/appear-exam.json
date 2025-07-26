@@ -1,0 +1,36 @@
+{
+  "exams": [
+    {
+      "examId": "EX001",
+      "subject": "Mathematics",
+      "duration": "60 mins",
+      "date": "2025-07-30",
+      "status": "Upcoming",
+      "action": "Start"
+    },
+    {
+      "examId": "EX002",
+      "subject": "Physics",
+      "duration": "45 mins",
+      "date": "2025-07-20",
+      "status": "Completed",
+      "action": "view result"
+    },
+    {
+      "examId": "EX003",
+      "subject": "Chemistry",
+      "duration": "30 mins",
+      "date": "2025-07-27",
+      "status": "Upcoming",
+      "action": "Start"
+    },
+    {
+      "examId": "EX004",
+      "subject": "Computer Science",
+      "duration": "60 mins",
+      "date": "2025-07-15",
+      "status": "Completed",
+      "action": "view result"
+    }
+  ]
+}

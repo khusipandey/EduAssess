@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // ✅ Import Router
 import { RouterModule } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
 import examContent from '../../../assets/exam.content.json'; // ✅ correct default import for JSON
@@ -12,4 +13,10 @@ import examContent from '../../../assets/exam.content.json'; // ✅ correct defa
 })
 export class ExamComponent {
   content = examContent;
+
+  constructor(private router: Router) {} // ✅ Inject Router
+
+  goTo(path: string) {
+    this.router.navigate([path]);
+  }
 }

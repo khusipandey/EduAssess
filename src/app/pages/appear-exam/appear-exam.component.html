@@ -1,0 +1,59 @@
+<!-- Navbar -->
+<div class="navbar">
+  <div class="brand">
+    <img src="assets/logo_eduassess.png" alt="EduAssess Logo" />
+  </div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/results">Results</a>
+  </div>
+</div>
+
+<!-- Main Content -->
+<section class="exam-container">
+  <h2>Exams</h2>
+
+  <!-- Exam Tabs -->
+  <div class="exam-tabs">
+    <button class="tab">Mock Test</button>
+    <button class="tab active">Exams</button>
+  </div>
+
+  <!-- Exam Table -->
+  <table class="exam-table">
+    <thead>
+      <tr>
+        <th>EXAM ID</th>
+        <th>SUBJECT</th>
+        <th>DURATION</th>
+        <th>DATE</th>
+        <th>STATUS</th>
+        <th>ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of exams">
+        <td>{{ exam.examId }}</td>
+        <td>{{ exam.subject }}</td>
+        <td>{{ exam.duration }}</td>
+        <td>{{ exam.date || '–––' }}</td>
+        <td class="status">{{ exam.status }}</td>
+        <td>
+          <button
+            [ngClass]="{
+              'start-btn': exam.action === 'Start',
+              'result-btn': exam.action === 'view result'
+            }"
+          >
+            {{ exam.action }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 EduAssess. All rights reserved.</p>
+</footer>

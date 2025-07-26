@@ -12,7 +12,7 @@
   },
   "hero": {
     "title": "EduAssess",
-    "subtitle": "Assess Smarter , Learn Bette",
+    "subtitle": "Assess Smarter , Learn Better",
     "ctaButtons": [
       { "text": "EXAMS", "type": "primary", "route": "/exams" },
       { "text": "ANNOUNCEMENTS", "type": "secondary", "route": "/announcements" }

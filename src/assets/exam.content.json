@@ -8,19 +8,22 @@
   },
   "examsSection": {
     "title": "Choose Your Action",
-    "cards": [
-      {
-        "title": "Create Exam",
-        "description": "Design and schedule new exams effortlessly. Define subjects, set durations, and assign exam dates—all in one place.",
-        "route": "/create-exam",
-        "image": "assets/create-exam.png"
-      },
-      {
-        "title": "Appear for Exam",
-        "description": "Join upcoming exams with a single click. View exam details, instructions, and start your test seamlessly.",
-        "route": "/appear-exam",
-        "image": "assets/exam-appear.png"
-      }
+  
+  "cards": [
+    {
+      "title": "Create Exam",
+      "description": "Design a new exam, set its subjects, duration, and schedule. Customize your exam settings and make it ready for participants.",
+      "image": "assets/create-exam.png",
+      "route": "/create-exam"
+    },
+    {
+      "title": "Appear for Exam",
+      "description": "Take your scheduled exam now. View exam details, check timing, and start the exam as soon as you're ready.",
+      "image": "assets/appear-exam.png",
+      "route": "/appear-exam"
+    }
+  
+
     ]
   },
   "footer": {
